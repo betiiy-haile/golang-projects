@@ -1,0 +1,22 @@
+[
+ {
+  "title": "Golang Project Setup",
+  "content": "Initialized Go module and structured folders for CLI notes app.",
+  "created_at": "2025-08-03T12:32:11.4398176+03:00"
+ },
+ {
+  "title": "Learn Go Interfaces",
+  "content": "Understand how interfaces work and how to use them for abstraction.",
+  "created_at": "2025-08-03T12:32:17.1277923+03:00"
+ },
+ {
+  "title": "Fix LoadNotes Bug",
+  "content": "Resolved type mismatch issue between note and storage package imports.",
+  "created_at": "2025-08-03T12:32:23.1174859+03:00"
+ },
+ {
+  "title": "CLI UX Improvement",
+  "content": "Added emoji indicators for user feedback on errors and success.",
+  "created_at": "2025-08-03T12:32:28.5364011+03:00"
+ }
+]
