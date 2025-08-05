@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Finish Go CLI project",
+    "description": "Complete the command line interface tool",
+    "due_date": "2025-08-04T00:00:00Z",
+    "priority": "high",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "title": "Study for exam",
+    "description": "Prepare Go topics",
+    "due_date": "2025-08-06T00:00:00Z",
+    "priority": "low",
+    "completed": true
+  },
+  {
+    "id": 4,
+    "title": "Buy groceries",
+    "description": "Milk, Bread, Eggs",
+    "due_date": "2025-08-10T00:00:00Z",
+    "priority": "High",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "title": "Read Go Docs",
+    "description": "Review Go routines and channels",
+    "due_date": "2025-08-08T00:00:00Z",
+    "priority": "Medium",
+    "completed": false
+  },
+  {
+    "id": 6,
+    "title": "Submit assignment",
+    "description": "Submit Golang CLI project to GitHub",
+    "due_date": "2025-08-07T00:00:00Z",
+    "priority": "Medium",
+    "completed": false
+  }
+]
