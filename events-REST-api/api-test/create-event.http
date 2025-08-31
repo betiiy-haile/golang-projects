@@ -1,0 +1,9 @@
+POST http://localhost:8080/events 
+Content-Type: application/json
+
+{
+  "name": "Go Workshop",
+  "description": "Learn Go from scratch: structs, goroutines, and HTTP servers.",
+  "location": "DevSpace, 456 Coding Lane, Austin, TX",
+  "dateTime": "2024-07-20T10:00:00.000Z"
+}
