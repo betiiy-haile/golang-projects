@@ -8,6 +8,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary Get all events
+// @Description Returns a list of all events
+// @Tags Events
+// @Produce json
+// @Success 200 {array} models.Event
+// @Failure 500 {object} map[string]string
+// @Router /events [get]
 func getEvents(context *gin.Context) {
 	events, err := models.GetAllEvents()
 	if err != nil {
@@ -17,6 +24,15 @@ func getEvents(context *gin.Context) {
 	context.JSON(http.StatusOK, events)
 }
 
+// @Summary Get a single event
+// @Description Returns details of an event by ID
+// @Tags Events
+// @Produce json
+// @Param id path int true "Event ID"
+// @Success 200 {object} models.Event
+// @Failure 400 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Router /events/{id} [get]
 func getEvent(context *gin.Context) {
 	eventId, err := strconv.ParseInt(context.Param("id"), 10, 64)
 	if err != nil {
@@ -31,6 +47,17 @@ func getEvent(context *gin.Context) {
 	context.JSON(http.StatusOK, event)
 }
 
+// @Summary Create a new event
+// @Description Creates a new event for the authenticated user
+// @Tags Events
+// @Accept json
+// @Produce json
+// @Param event body models.Event true "Event Data"
+// @Success 201 {object} map[string]interface{}
+// @Failure 400 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Security BearerAuth
+// @Router /events [post]
 func createEvent(context *gin.Context) {
 
 	var event models.Event
@@ -51,6 +78,19 @@ func createEvent(context *gin.Context) {
 	context.JSON(http.StatusCreated, gin.H{"message": "Event created!", "event": event})
 }
 
+// @Summary Update an event
+// @Description Updates an existing event (only by owner)
+// @Tags Events
+// @Accept json
+// @Produce json
+// @Param id path int true "Event ID"
+// @Param event body models.Event true "Updated Event Data"
+// @Success 200 {object} map[string]string
+// @Failure 400 {object} map[string]string
+// @Failure 401 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Security BearerAuth
+// @Router /events/{id} [put]
 func updateEvent(context *gin.Context) {
 	eventId, err := strconv.ParseInt(context.Param("id"), 10, 64)
 	if err != nil {
@@ -88,6 +128,16 @@ func updateEvent(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{"message": "Event updated Successfully!"})
 }
 
+// @Summary Delete an event
+// @Description Deletes an event (only by owner)
+// @Tags Events
+// @Param id path int true "Event ID"
+// @Success 200 {object} map[string]string
+// @Failure 400 {object} map[string]string
+// @Failure 401 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Security BearerAuth
+// @Router /events/{id} [delete]
 func deleteEvent(context *gin.Context) {
 	eventId, err := strconv.ParseInt(context.Param("id"), 10, 64)
 	if err != nil {

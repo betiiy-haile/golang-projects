@@ -8,22 +8,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// func signUp(context *gin.Context) {
-// 	var user models.User
-
-// 	err := context.ShouldBind(&user)
-// 	if err != nil {
-// 		context.JSON(http.StatusBadRequest, gin.H{"message": "couldn't parse request data"})
-// 		return
-// 	}
-
-// 	err = user.Save()
-// 	if err != nil {
-// 		context.JSON(http.StatusInternalServerError, gin.H{"message": "couldn't create user. Try again later"})
-// 		return
-// 	}
-// 	context.JSON(http.StatusCreated, gin.H{"message": "User created successfully!"})
-// }
+// @Summary Sign up a new user
+// @Description Create a new user with email and password
+// @Tags auth
+// @Accept json
+// @Produce json
+// @Param user body models.User true "User details"
+// @Success 201 {object} map[string]string
+// @Failure 400 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Router /signup [post]
 func signUp(c *gin.Context) {
     var user models.User
 
@@ -40,7 +34,16 @@ func signUp(c *gin.Context) {
     c.JSON(http.StatusCreated, gin.H{"message": "User created successfully!"})
 }
 
-
+// @Summary Login user
+// @Description Authenticate user and return JWT token
+// @Tags auth
+// @Accept json
+// @Produce json
+// @Param user body models.User true "User credentials"
+// @Success 200 {object} map[string]string
+// @Failure 400 {object} map[string]string
+// @Failure 401 {object} map[string]string
+// @Router /login [post]
 func login(context *gin.Context) {
 	var user models.User
 	err := context.ShouldBind(&user)
