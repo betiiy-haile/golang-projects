@@ -1,5 +1,6 @@
 POST http://localhost:8080/events 
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJldHR5MUBnbWFpbC5jb20iLCJleHAiOjE3NTY4MTU5MDYsInVzZXJJZCI6Mn0.qvXEdtJSx0EyJDppC31iW9jEfH0HmsIbrt0NoF_mHKQ
 
 {
   "name": "Go Workshop",

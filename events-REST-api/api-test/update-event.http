@@ -1,8 +1,10 @@
 PUT http://localhost:8080/events/3
 Content-Type: application/application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbmlAZ21haWwuY29tIiwiZXhwIjoxNzU2ODE5MjMxLCJ1c2VySWQiOjN9.ZOIsC7eV-tCu5id64K_v2w-NNfj1CV_IYCTygkdd-68
+
 
 {
-  "name": "Updated Event",
+  "name": "New Event",
   "description": "Learn Go from scratch: structs, goroutines, and HTTP servers.(Updated)",
   "location": "DevSpace, 456 Coding Lane, Austin ",
   "dateTime": "2025-07-20T10:00:00.000Z"
